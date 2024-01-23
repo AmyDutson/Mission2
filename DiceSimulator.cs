@@ -1,8 +1,9 @@
-﻿class DiceSimulator
+﻿using Mission2;
+
+class DiceSimulator
 {
     public static void Main()
     {
-        //declare variables
         int numRolls = 0;
 
         //ask user how many dice rolls and read user input
@@ -25,7 +26,6 @@
 
     public static void DisplayHistogram(int[] results, int numRolls)
     {
-        //declare variables
         int percentage = 0;
         string asterisks = "";
 
@@ -48,34 +48,3 @@
 
 }
 
-class DiceRoller
-{
-    public int[] SimulateRolls(int numRolls)
-    {
-        // declare variables
-        int die1 = 0;
-        int die2 = 0;
-        int total = 0;
-
-        //array to store count of each possible dice roll
-        int[] rollTotals = new int[13];
-
-        // instance of the Random class
-        Random random = new Random();
-
-        // simulate dice rolls for specified number of times
-        for (int i = 1; i <= numRolls; i++)
-        {
-            // generate random numbers for two dice and calulate roll total
-            die1 = random.Next(1, 7);
-            die2 = random.Next(1, 7);
-            total = die1 + die2;
-
-            // increment the count for the corresponding roll total
-            rollTotals[total]++;
-        }
-
-        //return array of the results
-        return rollTotals; 
-    }
-}
